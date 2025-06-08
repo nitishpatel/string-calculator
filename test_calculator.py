@@ -38,3 +38,7 @@ def test_negative_number_raises_exception():
     """Test that a negative number raises a ValueError."""
     with pytest.raises(ValueError, match="negative numbers not allowed -3"):
         add("1,-3")
+
+def test_multiple_negatives_show_all():
+    with pytest.raises(ValueError, match="negative numbers not allowed -1, -2, -3"):
+        add("1,-1,2,-2,3,-3")
