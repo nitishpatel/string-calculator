@@ -1,4 +1,9 @@
-# calculator.py
-
 def add(numbers: str) -> int:
-    return 0
+    if not numbers:
+        return 0
+
+    nums_list = numbers.split(',')
+    total = 0
+    for num in nums_list:
+        total += int(num)
+    return total
