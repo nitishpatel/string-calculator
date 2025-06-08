@@ -20,3 +20,7 @@ def test_invalid_number_raises_exception():
     """Test that an invalid number raises a ValueError."""
     with pytest.raises(ValueError, match="Invalid number: abc"):
         add("1,abc")
+
+def test_multiple_numbers_return_sum():
+    """Test that multiple numbers return their sum."""
+    assert add("10,20,30,40,50") == 150
