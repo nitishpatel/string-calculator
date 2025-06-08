@@ -5,5 +5,8 @@ def add(numbers: str) -> int:
     nums_list = numbers.split(',')
     total = 0
     for num in nums_list:
-        total += int(num)
+        try:
+            total += int(num)
+        except ValueError as e:
+            raise ValueError(f"Invalid number: {num}") from e
     return total
