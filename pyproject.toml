@@ -1,0 +1,11 @@
+[project]
+name = "string-calculator"
+version = "0.1.0"
+description = "Pythomn implementation of the String Calculator with TDD approach"
+authors = [
+    { name = "Nitish Patel", email = "nitishp.dev@gmail.com" }
+]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
