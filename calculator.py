@@ -1,4 +1,9 @@
 def add(numbers: str) -> int:
+    """
+    Adds numbers from a string input, handling custom delimiters and negative numbers.
+    If the input is empty, returns 0.
+    Raises ValueError for invalid numbers or negative numbers.
+    """
     if not numbers:
         return 0
     # Check for custom delimiter
@@ -22,4 +27,6 @@ def add(numbers: str) -> int:
     total = 0
     for num in nums_list:
         total += int(num)
+
+    # returning the total sum
     return total
