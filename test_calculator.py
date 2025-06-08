@@ -33,3 +33,8 @@ def test_custom_delimiter():
     """Test that a custom delimiter works."""
     assert add("//;\n1;2;3") == 6
     assert add("//|\n1|2|3|4") == 10
+
+def test_negative_number_raises_exception():
+    """Test that a negative number raises a ValueError."""
+    with pytest.raises(ValueError, match="negative numbers not allowed -3"):
+        add("1,-3")
