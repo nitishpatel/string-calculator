@@ -28,3 +28,8 @@ def test_multiple_numbers_return_sum():
 def test_newline_between_numbers():
     """Test that numbers separated by newlines are summed correctly."""
     assert add("1\n2,10") == 13
+
+def test_custom_delimiter():
+    """Test that a custom delimiter works."""
+    assert add("//;\n1;2;3") == 6
+    assert add("//|\n1|2|3|4") == 10
