@@ -1,8 +1,8 @@
 def add(numbers: str) -> int:
     if not numbers:
         return 0
-
-    nums_list = numbers.split(',')
+    # Split the input string by commas and newlines
+    nums_list = numbers.replace('\n', ',').split(',')
     total = 0
     for num in nums_list:
         try:
