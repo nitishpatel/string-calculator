@@ -1,7 +1,10 @@
 def cleanupdecorator(func):
     """Decorator to handle string input parsing and validation for calculator."""
-    def wrapper(self, *args, **kwargs):
-        numbers = args[0] if args else ''
+    def wrapper(*args, **kwargs):
+        if len(args) < 2:
+            return func(*args, **kwargs)
+        self = args[0] if args else None
+        numbers = args[1] if args else ''
         if not numbers:
             return 0
         # Check for custom delimiter
@@ -26,7 +29,9 @@ def cleanupdecorator(func):
             raise ValueError(
                 f"negative numbers not allowed {', '.join(negatives)}")
         nums_list = [int(i) for i in nums_list]
-        return func(self, nums_list)
+        new_args = (self, nums_list) if self else (nums_list,)
+        args = new_args + args[2:]
+        return func(*args, **kwargs)
     return wrapper
 
 
