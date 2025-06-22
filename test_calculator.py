@@ -43,3 +43,6 @@ def test_multiple_negatives_show_all():
     with pytest.raises(ValueError, match="negative numbers not allowed -1, -2, -3"):
         string_calc.add("1,-1,2,-2,3,-3")
 
+def test_odd_delimiter():
+    """Test that an odd delimiter works."""
+    assert string_calc.add("//o\n1o2o3") == 4
